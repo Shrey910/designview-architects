@@ -1,38 +1,22 @@
-# Dependencies
-node_modules/
-.npm/
-
 # Next.js
 .next/
 out/
+dist/
 
-# Development
-.next-swc/
-*.node
-
-# Logs
+# Node
+node_modules/
+.next/
+dist/
+out/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Environment variables
-.env*.local
+# Logs
+*.log
 
-# IDE
-.vscode/
-.idea/
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Large files
-*.zip
-*.rar
-*.exe
-*.msi
-*.iso
-*.dmg
-*.pkg
-*.deb
-*.rpm
+# Environment files
+.env
+.env.local
+.env.production
+.env.*.local
