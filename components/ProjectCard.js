@@ -37,9 +37,6 @@ export default function ProjectCard({ project }) {
                 {project.subcategory}
               </span>
             )}
-            <span className="text-xs font-sans uppercase tracking-wider text-neutral-500 bg-neutral-100 px-2 py-1 rounded mt-1">
-              {project.category}
-            </span>
           </div>
         </div>
         {project.area && (

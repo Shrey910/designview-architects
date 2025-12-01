@@ -1,15 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports for static hosting
-  output: 'export',
-  
-  // Configure image optimization
+  // Configure image optimization for Vercel
   images: {
-    unoptimized: true, // Required for static exports
+    unoptimized: true,
   },
-  
-  // Ensure trailing slashes are handled correctly
-  trailingSlash: true,
   
   // Optimize fonts
   experimental: {

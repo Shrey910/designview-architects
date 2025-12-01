@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-lg p-8 shadow-md text-center">
               <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6">
                 <Image 
-                  src="/placeholders/team1.jpg"
+                  src="/designview_logo.png"
                   alt="Team Member"
                   fill
                   className="object-cover"
@@ -135,7 +135,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-lg p-8 shadow-md text-center">
               <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6">
                 <Image 
-                  src="/placeholders/team2.jpg"
+                  src="/dwlogo.png"
                   alt="Team Member"
                   fill
                   className="object-cover"
@@ -152,7 +152,7 @@ export default function AboutPage() {
             <div className="bg-white rounded-lg p-8 shadow-md text-center">
               <div className="relative w-24 h-24 rounded-full overflow-hidden mx-auto mb-6">
                 <Image 
-                  src="/placeholders/team3.jpg"
+                  src="/ll.png"
                   alt="Team Member"
                   fill
                   className="object-cover"
