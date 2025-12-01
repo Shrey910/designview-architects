@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 
 export const metadata = {
-  title: 'Luxury Interior Design Studio',
+  title: 'Designview Architects | Luxury Interior Design Studio',
   description: 'Premium interior design services for discerning clients',
 };
 

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 // Dummy data for project details
 const projectData = {
@@ -28,7 +29,7 @@ const projectData = {
     title: 'Meadows @ Adani Shantigram',
     area: 'Adani Shantigram',
     subcategory: 'Residential',
-    description: 'An elegant interior design project that showcases our expertise in creating luxurious living spaces. This project demonstrates our commitment to combining functionality with aesthetic appeal to create a harmonious living environment.',
+    description: 'An exquisite residential project located in one of Ahmedabad\'s most prestigious developments. This design balances luxury with comfort, creating a sanctuary that reflects the refined tastes of its inhabitants. The thoughtful integration of indoor and outdoor spaces maximizes the natural beauty of the surroundings while providing all modern amenities.',
     heroImage: '/1.png',
     gallery: [
       '/1.png',
@@ -76,7 +77,7 @@ const projectData = {
     title: 'DELF Corporate Office',
     area: 'Panjrapole, Ahmedabad',
     subcategory: 'Commercial',
-    description: 'Located in Ahmedabad, the DELF Corporate Office is crafted as a modern, efficient workspace that reflects the firm\'s global engineering identity. The design blends clarity with functionality, pairing clean lines and a muted palette with subtle green accents to create a calm yet energizing environment. The journey begins at a serene entrance foyer anchored by a traditional Ganesh idol, setting a welcoming tone before transitioning into a linear, well-organized office layout. Extensive use of glass enhances openness, drawing natural light deeper into the space and creating seamless visual connectivity across circulation pathways and work zones. Workstations are thoughtfully arranged to support both collaboration and focused tasks, complemented by ergonomic furniture and well-considered lighting. Enclosed cabins, discussion areas, and technical stations are integrated with attention to workflow, acoustics, and storage. Low-maintenance materials, soft illumination, and reflective flooring contribute to an easy-to-navigate, energy-efficient workspace. Every corner—from the reception to the main hall—balances professionalism with warmth, embodying DELF\'s commitment to precision, transparency, and refined design. The result is a sophisticated and functional office that aligns perfectly with the firm\'s values and operational philosophy.',
+    description: 'A sophisticated corporate office design that fosters productivity and collaboration. The space combines modern aesthetics with functional efficiency, featuring open work areas, private meeting rooms, and休闲 zones. The design emphasizes natural light, ergonomic furniture, and a cohesive color palette that promotes a professional yet comfortable work environment.',
     heroImage: '/p_0005.jpg',
     gallery: [
       '/d-1.png',
@@ -173,14 +174,16 @@ export default function ProjectDetailPage() {
     <div className="min-h-screen">
       {/* Hero Image */}
       <div className="relative h-[70vh] overflow-hidden">
-        <motion.img 
-          src={project.heroImage} 
-          alt={project.title}
-          className="absolute inset-0 w-full h-full object-cover"
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-        />
+        <div className="relative w-full h-full">
+          <Image 
+            src={project.heroImage} 
+            alt={project.title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         
         <div className="relative z-10 h-full flex items-end pb-12 px-6 md:px-12">
@@ -232,11 +235,15 @@ export default function ProjectDetailPage() {
                 transition={{ delay: 0.1 * index, duration: 0.6 }}
                 className={`overflow-hidden rounded-lg ${isLastAndOdd ? 'md:col-start-1 md:col-end-3 md:justify-self-center md:w-1/2' : ''}`}
               >
-                <img 
-                  src={image} 
-                  alt={`${project.title} - Image ${index + 1}`}
-                  className="w-full h-80 object-cover"
-                />
+                <div className="relative w-full h-80">
+                  <Image 
+                    src={image} 
+                    alt={`${project.title} - Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
               </motion.div>
             );
           })}

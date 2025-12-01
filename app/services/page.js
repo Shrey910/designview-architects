@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function ServicesPage() {
   const services = [
@@ -70,52 +71,52 @@ export default function ServicesPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-serif font-light mb-6">Our Services</h1>
-          <p className="text-neutral-500 max-w-2xl mx-auto text-justify">
-            We offer comprehensive design solutions tailored to your unique needs and aspirations. 
-            Our expert team combines creativity with functionality to transform spaces into inspiring environments.
+          <div className="w-24 h-px bg-accent-600 mx-auto mb-8"></div>
+          <p className="text-neutral-600 max-w-2xl mx-auto">
+            We offer a comprehensive range of design services tailored to meet your unique vision and requirements.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-16 mb-24">
+        <div className="space-y-20">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className={`grid grid-cols-1 ${index % 2 === 0 ? 'lg:grid-cols-2' : 'lg:grid-cols-2 lg:grid-flow-col-dense'} gap-12 items-center`}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12`}
             >
-              <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <h2 className="text-3xl font-serif font-light mb-4">{service.title}</h2>
-                <p className="text-neutral-600 mb-6 leading-relaxed text-justify">
+              <div className="flex-1">
+                <h2 className="text-3xl font-serif font-light mb-6">{service.title}</h2>
+                <p className="text-neutral-600 mb-8 leading-relaxed">
                   {service.description}
                 </p>
-                <ul className="space-y-2 mb-8">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <span className="text-accent-600 mr-2">✓</span>
+                <ul className="space-y-3">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <svg className="w-5 h-5 text-accent-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
                       <span className="text-neutral-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
-                whileHover={{ scale: 1.03 }}
-                className={`overflow-hidden rounded-lg ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
-              >
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-auto object-cover"
-                />
-              </motion.div>
+              <div className="flex-1 w-full">
+                <div className="relative w-full h-96 rounded-lg overflow-hidden">
+                  <Image 
+                    src={service.image} 
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -123,24 +124,19 @@ export default function ServicesPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="text-center py-16 border-t border-neutral-200"
+          transition={{ delay: 0.8, duration: 0.6 }}
+          className="mt-20 text-center"
         >
-          <h2 className="text-3xl font-serif font-light mb-6">Ready to Transform Your Space?</h2>
-          <p className="text-neutral-600 mb-8 max-w-2xl mx-auto text-justify">
-            Let's discuss your project and create a space that truly reflects your vision and lifestyle.
+          <h2 className="text-3xl font-serif font-light mb-6">Let's Create Something Beautiful Together</h2>
+          <p className="text-neutral-600 mb-8 max-w-2xl mx-auto">
+            Ready to transform your space? Get in touch with us to discuss your project and discover how our expertise can bring your vision to life.
           </p>
-          <motion.div
-            whileHover={{ y: -3 }}
-            whileTap={{ scale: 0.98 }}
+          <Link 
+            href="/contact" 
+            className="inline-block bg-accent-600 text-white px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-black transition-colors duration-300"
           >
-            <Link 
-              href="/contact" 
-              className="inline-block bg-[#CA6B32] text-white border border-[#CA6B32] px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-white hover:text-[#CA6B32] transition-all"
-            >
-              Get In Touch
-            </Link>
-          </motion.div>
+            Contact Us
+          </Link>
         </motion.div>
       </div>
     </div>

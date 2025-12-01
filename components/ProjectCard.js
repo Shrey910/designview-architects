@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ProjectCard({ project }) {
   return (
@@ -12,13 +13,19 @@ export default function ProjectCard({ project }) {
         transition={{ duration: 0.3 }}
       >
         <div className="overflow-hidden rounded-lg mb-4">
-          <motion.img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-80 object-cover transform-scale-hover"
+          <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-          />
+            className="relative w-full h-80"
+          >
+            <Image 
+              src={project.image} 
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </motion.div>
         </div>
         <div className="flex justify-between items-center">
           <h3 className="text-xl font-serif font-light group-hover:text-accent-600 transition-colors">
