@@ -4,6 +4,8 @@ import ProjectGrid from '../../components/ProjectGrid';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+
 
 // Dummy data for all projects
 const allProjects = [
@@ -277,7 +279,7 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('All');
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const carouselRef = useRef(null);
@@ -432,3 +434,13 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
+function ProjectsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen py-24 px-6 md:px-12 lg:px-24">Loading...</div>}>
+      <ProjectsContent />
+    </Suspense>
+  );
+}
+
+export default ProjectsPage;
