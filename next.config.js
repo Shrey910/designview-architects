@@ -2,7 +2,7 @@
 const nextConfig = {
   // Configure image optimization for Vercel
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable image optimization for Vercel
   },
   
   // Handle prerendering issues
