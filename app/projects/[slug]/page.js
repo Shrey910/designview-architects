@@ -182,6 +182,11 @@ export default function ProjectDetailPage() {
             className="object-cover"
             priority
             sizes="100vw"
+            unoptimized={true}
+            onError={(e) => {
+              // Fallback to a placeholder if image fails to load
+              e.currentTarget.src = '/modern.jpg';
+            }}
           />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
@@ -242,6 +247,11 @@ export default function ProjectDetailPage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    unoptimized={true}
+                    onError={(e) => {
+                      // Fallback to a placeholder if image fails to load
+                      e.currentTarget.src = '/modern.jpg';
+                    }}
                   />
                 </div>
               </motion.div>

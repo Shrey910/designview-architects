@@ -32,6 +32,11 @@ export default function Navbar() {
               alt="Designview Logo" 
               fill
               className="object-contain"
+              unoptimized={true}
+              onError={(e) => {
+                // Fallback to a placeholder if image fails to load
+                e.currentTarget.src = '/modern.jpg';
+              }}
             />
           </div>
           <span className="text-xl font-serif font-bold text-white">DESIGNVIEW ARCHITECTS</span>
