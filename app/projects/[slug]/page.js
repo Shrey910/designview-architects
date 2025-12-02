@@ -77,7 +77,7 @@ const projectData = {
     title: 'DELF Corporate Office',
     area: 'Panjrapole, Ahmedabad',
     subcategory: 'Commercial',
-    description: 'A sophisticated corporate office design that fosters productivity and collaboration. The space combines modern aesthetics with functional efficiency, featuring open work areas, private meeting rooms, andleisure zones. The design emphasizes natural light, ergonomic furniture, and a cohesive color palette that promotes a professional yet comfortable work environment.',
+    description: 'A sophisticated corporate office design that fosters productivity and collaboration. The space combines modern aesthetics with functional efficiency, featuring open work areas, private meeting rooms, and休闲 zones. The design emphasizes natural light, ergonomic furniture, and a cohesive color palette that promotes a professional yet comfortable work environment.',
     heroImage: '/p_0005.jpg',
     gallery: [
       '/d-1.png',
