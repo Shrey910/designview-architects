@@ -5,11 +5,6 @@ const nextConfig = {
     unoptimized: true,
   },
   
-  // Optimize CSS
-  experimental: {
-    optimizeCss: true,
-  },
-  
   // Handle prerendering issues
   eslint: {
     ignoreDuringBuilds: true,
