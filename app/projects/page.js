@@ -4,8 +4,6 @@ import ProjectGrid from '../../components/ProjectGrid';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
-
 
 // Dummy data for all projects
 const allProjects = [
@@ -279,7 +277,7 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-function ProjectsContent() {
+export default function ProjectsPage() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('All');
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const carouselRef = useRef(null);
