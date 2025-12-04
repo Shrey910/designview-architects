@@ -4,6 +4,7 @@ import ProjectGrid from '../../components/ProjectGrid';
 import { motion } from 'framer-motion';
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 // Dummy data for all projects
 const allProjects = [
@@ -207,67 +208,13 @@ const otherProjects = [
     location: 'Bopal, Ahmedabad',
     year: '2024',
     image: '/modern.jpg'
-  },
-  {
-    id: 32,
-    title: 'Ambika Jewellery',
-    client: 'Mr. Anil Agrawal',
-    type: 'Commercial',
-    location: 'Vadaj, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 33,
-    title: 'Satyagrah Chhavani',
-    client: 'Mr. Nitin Thakkar',
-    type: 'Residential Bunglow',
-    location: 'Satellite, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 34,
-    title: 'The Meadows',
-    client: 'Mr. Harkishan Jagad',
-    type: 'Residential Bunglow',
-    location: 'Sanathal, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 35,
-    title: 'Kabir Enclave',
-    client: 'Mr. Dipu Chakraborty',
-    type: 'Residential Apartment',
-    location: 'Bopal, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 36,
-    title: 'Tushar Industries',
-    client: 'Mr. Snehal Shah',
-    type: 'Commercial',
-    location: 'Rakhiyal, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 37,
-    title: 'Abhishree Adroit',
-    client: 'Mr. Sachin Trivedi',
-    type: 'Commercial',
-    location: 'Vastrapur, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
   }
 ];
 
-const categories = ['All'];
-const subcategories = ['All', 'Residential', 'Commercial'];
+// Get unique subcategories
+const subcategories = ['All', ...new Set(allProjects.map(project => project.subcategory))];
 
-// Function to shuffle array
+// Fisher-Yates shuffle algorithm
 const shuffleArray = (array) => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -277,7 +224,7 @@ const shuffleArray = (array) => {
   return shuffled;
 };
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('All');
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
   const carouselRef = useRef(null);

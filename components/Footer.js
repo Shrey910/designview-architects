@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -7,7 +8,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center mb-4">
-              <img src="/dwlogo.png" alt="Designview Logo" className="h-12 w-auto mr-3" />
+              <div className="relative h-12 w-12 mr-3">
+                <Image 
+                  src="/dwlogo.png" 
+                  alt="Designview Logo" 
+                  fill
+                  className="object-contain"
+                  unoptimized={true}
+                />
+              </div>
               <h3 className="text-xl font-serif font-bold">DESIGNVIEW ARCHITECTS</h3>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -25,7 +26,15 @@ export default function Navbar() {
         </div>
         
         <Link href="/" className="flex items-center space-x-3 mx-8">
-          <img src="/dwlogo.png" alt="Designview Logo" className="h-10 w-auto" />
+          <div className="relative h-10 w-10">
+            <Image 
+              src="/dwlogo.png" 
+              alt="Designview Logo" 
+              fill
+              className="object-contain"
+              unoptimized={true}
+            />
+          </div>
           <span className="text-xl font-serif font-bold text-white">DESIGNVIEW ARCHITECTS</span>
         </Link>
         
