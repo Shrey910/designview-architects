@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className="bg-white text-[#303F57] py-16 px-6 md:px-12">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <div className="flex items-center mb-4">
-              <div className="relative h-12 w-12 mr-3">
+            <div className="flex items-start mb-4">
+              <div className="relative h-12 w-12 mr-3 flex-shrink-0">
                 <Image 
                   src="/dwlogo.png" 
                   alt="Designview Logo" 
@@ -17,8 +17,25 @@ export default function Footer() {
                   unoptimized={true}
                 />
               </div>
-              <h3 className="text-xl font-serif font-bold">DESIGNVIEW ARCHITECTS</h3>
+              <div>
+                <h3 className="text-xl font-serif font-bold">DESIGNVIEW ARCHITECTS</h3>
+                <p className="text-sm text-neutral-600 mt-1">
+                  Samkeet-2 Apartment,<br />
+                  Jodhpur, Satellite,<br />
+                  Ahmedabad - 380015
+                </p>
+              </div>
             </div>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-serif font-bold mb-4">Useful Links</h4>
+            <ul className="space-y-2">
+              <li><Link href="/projects" className="hover:text-accent-300 transition-colors text-[#303F57]">Projects</Link></li>
+              <li><Link href="/services" className="hover:text-accent-300 transition-colors text-[#303F57]">Services</Link></li>
+              <li><Link href="/about" className="hover:text-accent-300 transition-colors text-[#303F57]">About</Link></li>
+              <li><Link href="/contact" className="hover:text-accent-300 transition-colors text-[#303F57]">Contact</Link></li>
+            </ul>
           </div>
           
           <div>

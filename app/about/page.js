@@ -67,9 +67,9 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          <h2 className="text-3xl font-serif font-light mb-8 text-center">Our Approach</h2>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center p-6 flex-1">
+          <h2 className="text-3xl font-serif font-light mb-2 text-center">Our Approach</h2>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+            <div className="text-center p-2 flex-1">
               <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
               </div>
               <h3 className="text-xl font-serif font-light mb-4">Discover</h3>
@@ -85,7 +85,7 @@ export default function AboutPage() {
               </svg>
             </div>
             
-            <div className="text-center p-6 flex-1">
+            <div className="text-center p-2 flex-1">
               <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
               </div>
               <h3 className="text-xl font-serif font-light mb-4">Design</h3>
@@ -101,7 +101,7 @@ export default function AboutPage() {
               </svg>
             </div>
             
-            <div className="text-center p-6 flex-1">
+            <div className="text-center p-2 flex-1">
               <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
               </div>
               <h3 className="text-xl font-serif font-light mb-4">Deliver</h3>

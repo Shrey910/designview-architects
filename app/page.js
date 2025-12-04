@@ -52,38 +52,6 @@ export default function Home() {
 
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
-
-        {/* Hero content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20">
-          <motion.h1
-            className="text-5xl md:text-7xl font-serif font-light text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Designview Architects
-          </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl text-white font-light max-w-2xl mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            Crafting spaces that inspire and endure
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <Link
-              href="/projects"
-              className="inline-block bg-transparent border-2 border-white text-white px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all duration-300"
-            >
-              View Projects
-            </Link>
-          </motion.div>
-        </div>
       </div>
 
       {/* About Section */}

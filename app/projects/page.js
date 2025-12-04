@@ -106,7 +106,7 @@ const allProjects = [
     id: 14,
     title: 'Gym @ Sun Evoq',
     image: '/g-1.jpg',
-    subcategory: 'Commercial',
+    subcategory: 'Residential',
     area: 'Sindhubhavan Road, Ahmedabad',
     gallery: [
       '/g-1.jpg',

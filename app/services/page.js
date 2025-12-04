@@ -93,7 +93,7 @@ export default function ServicesPage() {
                 <p className="text-neutral-600 mb-6 leading-relaxed text-justify">
                   {service.description}
                 </p>
-                <ul className="space-y-2 mb-8">
+                <ul className="space-y-2 mb-4">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
                       <span className="text-accent-600 mr-2">✓</span>
@@ -108,12 +108,12 @@ export default function ServicesPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
                 whileHover={{ scale: 1.03 }}
-                className={`overflow-hidden rounded-lg ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
+                className={`overflow-hidden rounded-lg self-start ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
               >
                 <img 
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover max-h-80 object-contain"
                 />
               </motion.div>
             </motion.div>
@@ -138,7 +138,7 @@ export default function ServicesPage() {
               href="/contact" 
               className="inline-block bg-[#CA6B32] text-white border border-[#CA6B32] px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-white hover:text-[#CA6B32] transition-all"
             >
-              Get In Touch
+              Get Started
             </Link>
           </motion.div>
         </motion.div>
