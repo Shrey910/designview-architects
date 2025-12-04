@@ -266,7 +266,7 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-serif font-light mb-2">Gym @ Sun Evoq</h3>
-                  <p className="text-neutral-500 text-sm mb-3">Commercial</p>
+                  <p className="text-neutral-500 text-sm mb-3">Residential</p>
                   <p className="text-neutral-600 text-sm">Sindhubhavan Road, Ahmedabad</p>
                 </div>
               </Link>
