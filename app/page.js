@@ -38,7 +38,7 @@ export default function Home() {
           >
             <div className="relative w-full h-full">
               <Image
-                src={image}
+                src="/hero-1.jpg"
                 alt={`Hero image ${index + 1}`}
                 fill
                 className="object-cover"

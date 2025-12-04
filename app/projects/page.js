@@ -15,7 +15,7 @@ const allProjects = [
     subcategory: 'Residential',
     area: 'Gota, Ahmedabad',
     gallery: [
-      '/058c09ee-d572-48a1-b465-593c5c1b7cfa.jpg',
+      '/public/058c09ee-d572-48a1-b465-593c5c1b7cfa.jpg',
       '/1b5bdf8a-39a0-42de-84dc-fc8523dd28b6.jpg',
       '/1dec2fbe-6f4e-45fe-aa7a-27f626f0e906.jpg',
       '/350064a1-fd08-4bbc-93d1-8fce9778b142.jpg',
@@ -76,13 +76,13 @@ const allProjects = [
     subcategory: 'Commercial',
     area: 'Panjrapole, Ahmedabad',
     gallery: [
-      '/d-1.png',
-      '/d-2.png',
-      '/d-3.png',
-      '/d-4.png',
-      '/d-5.png',
-      '/d-6.jpg',
-      '/d-7.png'
+      'public/d-1.png',
+      'public/d-2.png',
+      'public/d-3.png',
+      'public/d-4.png',
+      'public/d-5.png',
+      'public/d-6.jpg',
+      'public/d-7.png'
     ]
   },
   // Interior Design - Commercial - Beauty Parlour Project
