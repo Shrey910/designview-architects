@@ -66,10 +66,9 @@ export default function Home() {
           >
             <h2 className="text-3xl md:text-4xl font-serif font-light mb-6">About Us</h2>
             <div className="w-24 h-px bg-accent-600 mx-auto mb-8" />
-            <p className="text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              At Designview Architects, we believe that great design transforms lives. With over a
-              decade of experience in architectural and interior design, we specialize in creating
-              spaces that are not only visually stunning but also deeply functional and sustainable.
+            <p className="text-neutral-600 max-w-3xl mx-auto leading-relaxed text-justify">
+              At Designview Architects, we believe that meaningful design goes beyond aesthetics — it shapes the way people live, work, and experience space. Based in Ahmedabad, we are an architecture and interior design studio with over a decade of experience delivering thoughtfully crafted residential and commercial environments.
+              Over the years, we have collaborated with clients across Ahmedabad to deliver spaces that are not only visually distinctive but also comfortable, efficient, and sustainable. Our work reflects a commitment to quality, attention to detail, and a design philosophy that values simplicity, purpose, and timeless appeal.
             </p>
           </motion.div>
 
@@ -130,8 +129,8 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-serif font-light mb-4">Interior Design</h3>
               <p className="text-neutral-600">
-                Comprehensive interior design services that create functional, aesthetically pleasing
-                environments.
+                Comprehensive interior design services creating functional,
+                aesthetically pleasing environments for homes and offices in Ahmedabad.
               </p>
             </motion.div>
 

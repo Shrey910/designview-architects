@@ -4,8 +4,8 @@ import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
 
 export const metadata = {
-  title: 'Designview Architects',
-  description: 'Premium interior design services for discerning clients',
+  title: 'Designview Architects - Best Interior Designers in Ahmedabad',
+  description: 'Best Interior Designers in Ahmedabad, Gujarat',
 };
 
 export default function RootLayout({ children }) {

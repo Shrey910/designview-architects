@@ -6,6 +6,21 @@ import { useEffect, useState } from 'react';
 
 // Dummy data for project details
 const projectData = {
+  // New Santoor Farm project
+  16: {
+    id: 16,
+    title: 'Santoor Farm',
+    area: 'Rancharda',
+    subcategory: 'Residential',
+    description: 'Santoor Farm is a remarkable residential project that beautifully integrates architecture with landscape design. The property features expansive gardens with carefully curated plant selections that complement the modern architecture. Our landscape design approach emphasizes native flora, sustainable irrigation systems, and outdoor living spaces that seamlessly connect with the interior. The project includes manicured lawns, decorative pathways, water features, and strategically placed trees that provide both aesthetic appeal and natural shade. The landscaping design creates private outdoor retreats while maintaining visual continuity with the surrounding environment, resulting in a harmonious blend of built and natural elements.',
+    heroImage: '/ff1.png',
+    gallery: [
+      '/ff1.png',
+      '/ff2.png',
+      '/ff3.png',
+      '/ff4.png'
+    ]
+  },
   8: {
     id: 8,
     title: 'Alexa',

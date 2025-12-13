@@ -8,6 +8,20 @@ import { Suspense } from 'react';
 
 // Dummy data for all projects
 const allProjects = [
+  // New Santoor Farm project
+  {
+    id: 16,
+    title: 'Santoor Farm',
+    image: '/ff1.png',
+    subcategory: 'Residential',
+    area: 'Rancharda',
+    gallery: [
+      '/ff1.png',
+      '/ff2.png',
+      '/ff3.png',
+      '/ff4.png'
+    ]
+  },
   {
     id: 8,
     title: 'Alexa',
