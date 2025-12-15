@@ -21,6 +21,40 @@ const projectData = {
       '/ff4.png'
     ]
   },
+  // New Shashwat Bunglows project
+  17: {
+    id: 17,
+    title: 'Shashwat Bunglows',
+    area: 'Ahmedabad',
+    subcategory: 'Residential',
+    description: 'Shashwat Bunglows represents our commitment to creating elegant residential spaces that blend modern design with traditional comfort. This project showcases our expertise in crafting luxurious living environments that prioritize both aesthetics and functionality. Each bungalow in this development features carefully planned layouts, premium materials, and thoughtful design elements that enhance the quality of life for residents. The project emphasizes natural light, ventilation, and seamless indoor-outdoor connectivity, creating homes that are both beautiful and livable.',
+    heroImage: '/s-1.jpg',
+    gallery: [
+      '/s-1.jpg',
+      '/s-3.jpg',
+      '/s-4.jpg',
+      '/s-8.jpg',
+      '/s-5.jpg',
+      '/s-6.jpg',
+      '/s-7.jpg'
+    ]
+  },
+  // New Venus Atlantis project
+  18: {
+    id: 18,
+    title: 'Venus Atlantis',
+    area: 'Prahladnagar, Ahmedabad',
+    subcategory: 'Commercial',
+    description: 'Venus Atlantis is a sophisticated commercial project that exemplifies our approach to creating inspiring work environments. This project combines contemporary design with functional excellence to deliver a space that fosters productivity and creativity. The design features modern aesthetics with carefully selected materials that create a professional yet welcoming atmosphere. Thoughtful planning ensures optimal workflow and spatial efficiency while maintaining the highest standards of comfort and style. The result is a commercial space that reflects the progressive vision of its occupants while providing a premium environment for business operations.',
+    heroImage: '/vs-1.png',
+    gallery: [
+      '/vs-1.png',
+      '/vs-2.png',
+      '/vs-3.png',
+      '/vs-4.png',
+      '/vs-5.png'
+    ]
+  },
   8: {
     id: 8,
     title: 'Alexa',

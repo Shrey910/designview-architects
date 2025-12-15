@@ -14,12 +14,29 @@ const allProjects = [
     title: 'Santoor Farm',
     image: '/ff1.png',
     subcategory: 'Residential',
-    area: 'Rancharda',
+    area: 'Rancharda, Ahmedabad',
     gallery: [
       '/ff1.png',
       '/ff2.png',
       '/ff3.png',
       '/ff4.png'
+    ]
+  },
+  // New Shashwat Bunglows project
+  {
+    id: 17,
+    title: 'Shashwat Bunglows',
+    image: '/s-1.jpg',
+    subcategory: 'Residential',
+    area: 'Satellite, Ahmedabad',
+    gallery: [
+      '/s-1.jpg',
+      '/s-3.jpg',
+      '/s-4.jpg',
+      '/s-8.jpg',
+      '/s-5.jpg',
+      '/s-6.jpg',
+      '/s-7.jpg'
     ]
   },
   {
@@ -80,6 +97,21 @@ const allProjects = [
       '/p5.png',
       '/p6.png',
       '/p8.png'
+    ]
+  },
+  // New Venus Atlantis project
+  {
+    id: 18,
+    title: 'Venus Atlantis',
+    image: '/vs-1.png',
+    subcategory: 'Commercial',
+    area: 'Prahladnagar, Ahmedabad',
+    gallery: [
+      '/vs-1.png',
+      '/vs-2.png',
+      '/vs-3.png',
+      '/vs-4.png',
+      '/vs-5.png'
     ]
   },
   // Interior Design - Commercial - DELF Project
