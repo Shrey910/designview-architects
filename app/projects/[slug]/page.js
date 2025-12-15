@@ -61,15 +61,15 @@ const projectData = {
     area: 'Gota, Ahmedabad',
     subcategory: 'Residential',
     description: 'A stunning modern residence that combines elegance with functionality. This comprehensive interior design project showcases our approach to creating cohesive, livable spaces that reflect the client\'s personal style while maximizing the potential of the architecture.',
-    heroImage: '/1b5bdf8a-39a0-42de-84dc-fc8523dd28b6.jpg',
+    heroImage: '/al-1.jpg',
     gallery: [
-      '/058c09ee-d572-48a1-b465-593c5c1b7cfa.jpg',
-      '/1b5bdf8a-39a0-42de-84dc-fc8523dd28b6.jpg',
-      '/1dec2fbe-6f4e-45fe-aa7a-27f626f0e906.jpg',
-      '/350064a1-fd08-4bbc-93d1-8fce9778b142.jpg',
-      '/c0805003-d7e7-4473-af14-31a7ed6e825a.jpg',
-      '/c75769ef-2dd4-460d-9c4a-122b8ecebb28.jpg',
-      '/e57cfeec-bffd-4ff2-9a3c-72084d52f146.jpg'
+      '/al-1.jpg',
+      '/al-2.jpg',
+      '/al-3.jpg',
+      '/al-4.jpg',
+      '/al-5.jpg',
+      '/al-6.jpg',
+      '/al-7.jpg'
     ]
   },
   9: {

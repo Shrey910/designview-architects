@@ -127,7 +127,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden h-64">
                 {/* Google Maps Embed with Marker at Samkeet-2 Apartment, Jodhpur, Satellite, Ahmedabad */}
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.838183015345!2d72.54493031537566!3d23.02746298495026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84d6d0d0d0d0%3A0x1234567890abcdef!2sSamkeet-2%20Apartment%2C%20Jodhpur%2C%20Satellite%2C%20Ahmedabad%2C%20Gujarat%20380015!5e0!3m2!1sen!2sin!4v1651234567890!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.1045318939764!2d72.51343767554054!3d23.019933816426256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b2dc6b1777b%3A0x4c83ace9cbbe40bb!2sSamkeet-2!5e0!3m2!1sen!2sin!4v1765800147840!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
