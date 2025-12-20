@@ -199,7 +199,7 @@ export default function Home() {
               <Link href="/projects/8" className="block">
                 <div className="h-64 overflow-hidden relative">
                   <Image
-                    src="/1b5bdf8a-39a0-42de-84dc-fc8523dd28b6.jpg"
+                    src="/al-1.jpg"
                     alt="Alexa"
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-105"
