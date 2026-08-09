@@ -96,8 +96,8 @@ const projectData = {
     heroImage: '/h-1.JPG',
     gallery: [
       '/h-1.JPG',
-      '/h-2.jpg',
-      '/h-3.jpg'
+      '/h-2.png',
+      '/h-3.png'
     ]
   },
   // Interior Design - Residential - Swasthi Project
