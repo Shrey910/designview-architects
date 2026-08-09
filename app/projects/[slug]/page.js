@@ -187,6 +187,50 @@ const projectData = {
       '/n-7.png',
       '/n-8.png'
     ]
+  },
+  // Retail Projects - Anil Sarees
+  19: {
+    id: 19,
+    title: 'Anil Sarees',
+    area: 'Naroda',
+    subcategory: 'Retail',
+    description: 'Anil Sarees is a premium retail showroom design that showcases our expertise in creating elegant commercial spaces. This project demonstrates our ability to blend functionality with sophisticated aesthetics to create an inviting shopping environment that enhances the customer experience. The space is designed to highlight products effectively while providing customers with a comfortable and engaging shopping experience.',
+    heroImage: '/retail/swr-1.jpg',
+    gallery: [
+      '/retail/swr-1.jpg',
+      '/retail/swr-2.jpg',
+      '/retail/swr-3.jpg',
+      '/retail/swr-4.jpg'
+    ]
+  },
+  // Retail Projects - Virgo Designs
+  20: {
+    id: 20,
+    title: 'Virgo Designs',
+    area: 'Paldi, Ahmedabad',
+    subcategory: 'Retail',
+    description: 'Virgo Designs is a sophisticated retail showroom that exemplifies our approach to commercial interior architecture. The project features a harmonious blend of modern design elements and practical considerations, creating a space that both attracts customers and supports business operations effectively. This showroom design emphasizes clean lines, strategic lighting, and thoughtful space planning to create an optimal shopping experience.',
+    heroImage: '/sr-1.jpg',
+    gallery: [
+      '/sr-1.jpg',
+      '/sr-2.jpg',
+      '/sr-3.jpg',
+      '/sr-4.png'
+    ]
+  },
+  // Retail Projects - Mobile Shop
+  21: {
+    id: 21,
+    title: 'Mobile Shop',
+    area: 'Paldi, Ahmedabad',
+    subcategory: 'Retail',
+    description: 'Mobile Shop is a modern retail design that showcases our expertise in creating functional and attractive commercial spaces. This project demonstrates our ability to blend contemporary aesthetics with practical retail solutions, creating an environment that enhances both customer experience and business operations. The space is designed with clean lines, strategic product display areas, and efficient workflow planning.',
+    heroImage: '/ms-1.png',
+    gallery: [
+      '/ms-1.png',
+      '/ms-2.png',
+      '/ms-3.png'
+    ]
   }
 };
 

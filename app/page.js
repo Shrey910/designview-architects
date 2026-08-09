@@ -13,6 +13,7 @@ const heroImages = [
   '/hero-3.jpg',
 ];
 
+
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

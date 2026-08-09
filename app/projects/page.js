@@ -178,6 +178,47 @@ const allProjects = [
       '/n-7.png',
       '/n-8.png'
     ]
+  },
+  // Retail Projects - Anil Sarees
+  {
+    id: 19,
+    title: 'Anil Sarees',
+    image: '/retail/swr-1.jpg',
+    subcategory: 'Retail',
+    area: 'Naroda',
+    gallery: [
+      '/retail/swr-1.jpg',
+      '/retail/swr-2.jpg',
+      '/retail/swr-3.jpg',
+      '/retail/swr-4.jpg'
+    ]
+  },
+  // Retail Projects - Virgo Designs
+  {
+    id: 20,
+    title: 'Virgo Designs',
+    image: '/sr-1.jpg',
+    subcategory: 'Retail',
+    area: 'Paldi, Ahmedabad',
+    gallery: [
+      '/sr-1.jpg',
+      '/sr-2.jpg',
+      '/sr-3.jpg',
+      '/sr-4.png'
+    ]
+  },
+  // Retail Projects - Mobile Shop
+  {
+    id: 21,
+    title: 'Ajit Mobile Store',
+    image: '/ms-1.png',
+    subcategory: 'Retail',
+    area: 'Paldi, Ahmedabad',
+    gallery: [
+      '/ms-1.png',
+      '/ms-2.png',
+      '/ms-3.png'
+    ]
   }
 ];
 
@@ -234,15 +275,6 @@ const otherProjects = [
     client: 'Mr. Rajan Sushrut',
     type: 'Residential Bunglow',
     location: 'SBR, Ahmedabad',
-    year: '2024',
-    image: '/modern.jpg'
-  },
-  {
-    id: 30,
-    title: 'Virgo Designs',
-    client: 'Mr. Jigar Khambholja',
-    type: 'Commercial Showroom',
-    location: 'Paldi, Ahmedabad',
     year: '2024',
     image: '/modern.jpg'
   },
