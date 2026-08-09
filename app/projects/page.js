@@ -70,13 +70,13 @@ const allProjects = [
     ]
   },
   {
-    id: 10,
+    id: 22,
     title: 'Hindva Skylife',
     image: '/h-1.jpg',
     subcategory: 'Residential',
     area: 'Gota, Ahmedabad',
     gallery: [
-      '/h-1.jpg',
+      '/h-1.JPG',
       '/h-2.png',
       '/h-3.png'
     ]
