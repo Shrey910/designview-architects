@@ -90,14 +90,18 @@ const projectData = {
   22: {
     id: 22,
     title: 'Hindva Skylife',
-    area: 'Gota, Ahmedabad',
+    area: 'Naroda, Ahmedabad',
     subcategory: 'Residential',
     description: 'A stunning modern residence that combines elegance with functionality. This comprehensive interior design project showcases our approach to creating cohesive, livable spaces that reflect the client\'s personal style while maximizing the potential of the architecture.',
     heroImage: '/h-1.JPG',
     gallery: [
       '/h-1.JPG',
       '/h-2.png',
-      '/h-3.png'
+      '/h-3.png',
+      '/h-4.png',
+      '/h-5.png',
+      '/h-6.png',
+      '/h-7.png'
     ]
   },
   // Interior Design - Residential - Swasthi Project

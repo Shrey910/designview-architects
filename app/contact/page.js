@@ -104,7 +104,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-light text-lg mb-2 text-[#303F57]">Phone</h3>
-                  <a href="tel:+919825254324" className="text-neutral-600 hover:text-[#CA6B32] transition-colors">+91 9825254324</a>
+                  <a href="tel:+919825254324" className="text-neutral-600 hover:text-[#CA6B32] transition-colors">+91 9825254324 | +91 8141300493</a>
                 </div>
               </div>
               
@@ -117,7 +117,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-serif font-light text-lg mb-2 text-[#303F57]">Office</h3>
-                  <p className="text-neutral-600">Samkeet-2 Apartment,<br />Jodhpur,<br />Satellite,<br />Ahmedabad - 380015</p>
+                  <p className="text-neutral-600">A/11, Samkeet-2 Apartment,<br />Jodhpur,<br />Satellite,<br />Ahmedabad - 380015</p>
                 </div>
               </div>
             </div>
