@@ -69,6 +69,18 @@ const allProjects = [
       '/5.png'
     ]
   },
+  {
+    id: 10,
+    title: 'Hindva Skylife',
+    image: '/h-1.jpg',
+    subcategory: 'Residential',
+    area: 'Gota, Ahmedabad',
+    gallery: [
+      '/h-1.jpg',
+      '/h-2.png',
+      '/h-3.png'
+    ]
+  },
   // Interior Design - Residential - Swasthi Project
   {
     id: 11,
