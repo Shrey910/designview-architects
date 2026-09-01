@@ -16,7 +16,7 @@ export default function ProjectCard({ project }) {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="relative w-full h-80"
+            className="relative w-full aspect-[3/2]"
           >
             <Image 
               src={project.image} 

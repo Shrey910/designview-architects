@@ -235,6 +235,19 @@ const allProjects = [
       '/ms-2.png',
       '/ms-3.png'
     ]
+  },
+  {
+    id: 23,
+    title: 'Devika Silk Palace',
+    image: '/ss-5.png',
+    subcategory: 'Retail',
+    area: 'Naranpura, Ahmedabad',
+    gallery: [
+      '/ss-1.png',
+      '/ss-2.png',
+      '/ss-3.png',
+      '/ss-4.png',
+    ]
   }
 ];
 
@@ -308,15 +321,15 @@ const otherProjects = [
 // Get unique subcategories
 const subcategories = ['All', ...new Set(allProjects.map(project => project.subcategory))];
 
-// Fisher-Yates shuffle algorithm
-const shuffleArray = (array) => {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-};
+// // Fisher-Yates shuffle algorithm
+// const shuffleArray = (array) => {
+//   const shuffled = [...array];
+//   for (let i = shuffled.length - 1; i > 0; i--) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+//   }
+//   return shuffled;
+// };
 
 function ProjectsContent() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('All');
@@ -327,7 +340,7 @@ function ProjectsContent() {
   const searchParams = useSearchParams();
   
   // Shuffle projects on component mount
-  const shuffledProjects = useMemo(() => shuffleArray(otherProjects), []);
+  const shuffledProjects = otherProjects;
   
   // Check for category parameter in URL
   useEffect(() => {
