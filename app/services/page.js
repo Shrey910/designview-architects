@@ -136,7 +136,7 @@ export default function ServicesPage() {
           >
             <Link 
               href="/contact" 
-              className="inline-block bg-[#CA6B32] text-white border border-[#CA6B32] px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-white hover:text-[#CA6B32] transition-all"
+              className="inline-block bg-[#F6F5F0] text-black border border-[#000000] px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-white hover:text-[#CA6B32] transition-all"
             >
               Get Started
             </Link>
