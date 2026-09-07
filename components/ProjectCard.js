@@ -29,7 +29,7 @@ export default function ProjectCard({ project }) {
           </motion.div>
         </div>
         <div className="flex justify-between items-center">
-          <h3 className="text-xl font-serif font-light group-hover:text-accent-600 transition-colors">
+          <h3 className="text-lg font-serif font-light group-hover:text-accent-600 transition-colors">
             {project.title}
           </h3>
           <div className="flex flex-col items-end">

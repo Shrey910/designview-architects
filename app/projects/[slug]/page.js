@@ -251,19 +251,19 @@ const projectData = {
   },
 
   23: {
-  id: 23,
-  title: 'Devika Silk Palace',
-  area: 'Naranpura, Ahmedabad',
-  subcategory: 'Retail',
-  description: 'Devika Silk Palace is an elegant retail showroom designed to create a refined and welcoming shopping experience. The interior combines sophisticated detailing with practical product display, creating a balanced environment that highlights the richness of the merchandise while maintaining comfortable circulation and functionality.',
-  heroImage: '/ss-5.png',
-  gallery: [
-    '/ss-1.png',
-    '/ss-2.png',
-    '/ss-3.png',
-    '/ss-4.png'
-  ]
-},
+    id: 23,
+    title: 'Devika Silk Palace',
+    area: 'Naranpura, Ahmedabad',
+    subcategory: 'Retail',
+    description: 'Devika Silk Palace is an elegant retail showroom designed to create a refined and welcoming shopping experience. The interior combines sophisticated detailing with practical product display, creating a balanced environment that highlights the richness of the merchandise while maintaining comfortable circulation and functionality.',
+    heroImage: '/ss-5.png',
+    gallery: [
+      '/ss-1.png',
+      '/ss-2.png',
+      '/ss-3.png',
+      '/ss-4.png'
+    ]
+  },
 };
 
 export default function ProjectDetailPage() {

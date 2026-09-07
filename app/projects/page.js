@@ -321,16 +321,6 @@ const otherProjects = [
 // Get unique subcategories
 const subcategories = ['All', ...new Set(allProjects.map(project => project.subcategory))];
 
-// // Fisher-Yates shuffle algorithm
-// const shuffleArray = (array) => {
-//   const shuffled = [...array];
-//   for (let i = shuffled.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-//   }
-//   return shuffled;
-// };
-
 function ProjectsContent() {
   const [selectedSubcategory, setSelectedSubcategory] = useState('All');
   const [isCarouselPaused, setIsCarouselPaused] = useState(false);
@@ -388,9 +378,9 @@ function ProjectsContent() {
         transition={{ duration: 0.6 }}
         className="mb-16 text-center"
       >
-        <h1 className="text-4xl md:text-5xl font-serif font-light mb-4">Our Projects</h1>
-        <p className="text-neutral-500 max-w-2xl mx-auto">
-          Discover our portfolio of meticulously crafted projects that reflect our commitment to timeless elegance and functional beauty.
+        <h1 className="text-6xl md:text-7xl font-serif font-light mb-6 tracking-tight">Our Projects</h1>
+        <p className="text-neutral-500 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Discover our portfolio of meticulously crafted projects that reflect our commitment to timeless elegance and functional beauty.
         </p>
       </motion.div>
 
@@ -400,7 +390,7 @@ function ProjectsContent() {
           <button
             key={subcategory}
             onClick={() => setSelectedSubcategory(subcategory)}
-            className={`px-6 py-2 text-sm font-sans uppercase tracking-wider transition-all ${
+            className={`px-7 py-3 text-xs md:text-sm font-sans uppercase tracking-[0.12em] transition-all ${
               selectedSubcategory === subcategory
                 ? 'bg-accent-600 text-white'
                 : 'border border-neutral-300 hover:bg-accent-100 hover:border-accent-300'
@@ -413,75 +403,123 @@ function ProjectsContent() {
 
       <ProjectGrid projects={filteredProjects} />
 
-      {/* Other Projects Carousel */}
-      <section className="mt-20 pt-10 border-t border-neutral-200">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-light mb-4">Other Projects</h2>
-            <p className="text-neutral-500 max-w-2xl mx-auto">
-              Discover more of our exceptional architectural and interior design projects.
-            </p>
-          </motion.div>
+              {/* Other Projects Carousel */}
+            <section className="mt-12 pt-6 border-t border-neutral-200">
+              <div className="max-w-6xl mx-auto">
 
-          <div className="relative overflow-hidden py-4">
-            <div 
-              ref={carouselRef}
-              className="flex gap-6 whitespace-nowrap"
-              style={{ width: 'max-content' }}
-              onMouseEnter={() => setIsCarouselPaused(true)}
-              onMouseLeave={() => setIsCarouselPaused(false)}
-            >
-              {/* Render cards in a loop */}
-              {Array.from({ length: 50 }).map((_, index) => {
-                const project = shuffledProjects[index % shuffledProjects.length];
-                const actualIndex = index % shuffledProjects.length;
-                
-                return (
-                  <motion.div
-                    key={`${project.id}-${index}`}
-                    whileHover={{ y: -5 }}
-                    className="flex-shrink-0 w-96 bg-white rounded-lg overflow-hidden shadow-md border-l-4 border-[#CA6B32]"
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6 }}
+                  className="text-center mb-8"
+                >
+                  <h2 className="text-3xl md:text-4xl font-serif font-light mb-3">
+                    Other Projects
+                  </h2>
+
+                  <p className="text-sm md:text-base text-neutral-500 max-w-xl mx-auto">
+                    Discover more of our exceptional architectural and interior design projects.
+                  </p>
+                </motion.div>
+
+                <div className="relative overflow-hidden py-3">
+                  <div
+                    ref={carouselRef}
+                    className="flex gap-4 whitespace-nowrap"
+                    style={{ width: 'max-content' }}
+                    onMouseEnter={() => setIsCarouselPaused(true)}
+                    onMouseLeave={() => setIsCarouselPaused(false)}
                   >
-                    <div className="block p-6">
-                      <h3 className="text-xl font-serif font-light mb-3 text-[#303F57] truncate">{project.title}</h3>
-                      <div className="space-y-2">
-                        <p className="text-neutral-600 text-sm flex items-start">
-                          <svg className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                          </svg>
-                          <span className="font-medium mr-1">Client:</span> 
-                          <span className="truncate">{project.client}</span>
-                        </p>
-                        <p className="text-neutral-600 text-sm flex items-start">
-                          <svg className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                          </svg>
-                          <span className="font-medium mr-1">Type:</span> 
-                          <span className="truncate">{project.type}</span>
-                        </p>
-                        <p className="text-neutral-600 text-sm flex items-start">
-                          <svg className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                          </svg>
-                          <span className="font-medium mr-1">Location:</span> 
-                          <span className="truncate">{project.location}</span>
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </section>
+                    {Array.from({ length: 50 }).map((_, index) => {
+                      const project = shuffledProjects[index % shuffledProjects.length];
+
+                      return (
+                        <motion.div
+                          key={`${project.id}-${index}`}
+                          whileHover={{ y: -4 }}
+                          className="flex-shrink-0 w-80 min-h-[150px] bg-white rounded-lg overflow-hidden shadow-sm border-l-4 border-[#CA6B32]"
+                        >
+                          <div className="block p-5">
+
+                            <h3 className="text-sm font-serif font-light mb-3 text-[#303F57] truncate">
+                              {project.title}
+                            </h3>
+
+                            <div className="space-y-1.5">
+
+                              <p className="text-neutral-600 text-sm flex items-start">
+                                <svg
+                                  className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7-7h14a7 7 0 00-7-7z"
+                                  />
+                                </svg>
+
+                                <span className="font-medium mr-1">Client:</span>
+                                <span className="truncate">{project.client}</span>
+                              </p>
+
+                              <p className="text-neutral-600 text-sm flex items-start">
+                                <svg
+                                  className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                  />
+                                </svg>
+
+                                <span className="font-medium mr-1">Type:</span>
+                                <span className="truncate">{project.type}</span>
+                              </p>
+
+                              <p className="text-neutral-600 text-sm flex items-start">
+                                <svg
+                                  className="w-4 h-4 mr-2 mt-0.5 text-neutral-400 flex-shrink-0"
+                                  fill="none"
+                                  stroke="currentColor"
+                                  viewBox="0 0 24 24"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 00-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                  />
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                  />
+                                </svg>
+
+                                <span className="font-medium mr-1">Location:</span>
+                                <span className="truncate">{project.location}</span>
+                              </p>
+
+                            </div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </section>
 
     </div>
   );

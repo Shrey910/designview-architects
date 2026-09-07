@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Hero carousel images – keep these in /public
 const heroImages = [
   '/hero_image.jpg',
   '/hero-1.jpg',
@@ -13,282 +12,343 @@ const heroImages = [
   '/hero-3.jpg',
 ];
 
+const projects = [
+  {
+    id: 8,
+    name: 'Alexa',
+    type: 'RESIDENCE',
+    location: 'GOTA, AHMEDABAD',
+    year: '2025',
+    image: '/al-1.jpg',
+  },
+  {
+    id: 10,
+    name: 'DELF Corporate Office',
+    type: 'COMMERCIAL',
+    location: 'PANJRAPOLE, AHMEDABAD',
+    year: '2017',
+    image: '/p_0005.jpg',
+  },
+  {
+    id: 14,
+    name: 'DEVIKA SILK PALACE',
+    type: 'RETAIL',
+    location: 'NARANPURA, AHMEDABAD',
+    year: '2026',
+    image: '/ss-4.png',
+  },
+];
 
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 3000); // 3 seconds
+      setCurrentImageIndex(
+        (previous) =>
+          (previous + 1) % heroImages.length
+      );
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, []); // heroImages length is constant
+  }, []);
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Carousel */}
-      <div className="relative h-screen overflow-hidden">
-        {/* Background images */}
-        {heroImages.map((image, index) => (
-          <motion.div
-            key={index}
-            className="absolute inset-0 z-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: index === currentImageIndex ? 1 : 0 }}
-            transition={{ duration: 2 }}
-          >
-            <div className="relative w-full h-full">
+    <div className="homepage">
+
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
+      <section className="hero-section">
+
+        {/* Hero Images */}
+        <div className="hero-images">
+          {heroImages.map((image, index) => (
+            <motion.div
+              key={image}
+              className="hero-image"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity:
+                  index === currentImageIndex ? 1 : 0,
+                scale:
+                  index === currentImageIndex ? 1 : 1.04,
+              }}
+              transition={{
+                opacity: { duration: 1.5 },
+                scale: { duration: 6 },
+              }}
+            >
               <Image
                 src={image}
-                alt={`Hero image ${index + 1}`}
+                alt="Designview Architects project"
                 fill
-                className="object-cover"
                 priority={index === 0}
                 sizes="100vw"
+                className="object-cover"
               />
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/30 z-10 pointer-events-none" />
-      </div>
+        {/* Image overlay */}
+        <div className="hero-overlay"></div>
 
-      {/* About Section */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 bg-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
+        {/* Hero Content */}
+        <div className="hero-content">
+
+          <motion.h1
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 1 }}
           >
-            <h2 className="text-3xl md:text-4xl font-serif font-light mb-6">About Us</h2>
-            <div className="w-24 h-px bg-accent-600 mx-auto mb-8" />
-            <p className="text-neutral-600 max-w-3xl mx-auto leading-relaxed text-justify">
-              At Designview Architects, we believe that meaningful design goes beyond aesthetics — it shapes the way people live, work, and experience space. Based in Ahmedabad, we are an architecture and interior design studio with over a decade of experience delivering thoughtfully crafted residential and commercial environments.
-              Over the years, we have collaborated with clients across Ahmedabad to deliver spaces that are not only visually distinctive but also comfortable, efficient, and sustainable. Our work reflects a commitment to quality, attention to detail, and a design philosophy that values simplicity, purpose, and timeless appeal.
+            Spaces shaped for
+            <br />
+            the way you live.
+          </motion.h1>
+
+          <div className="hero-bottom">
+
+            <p>
+              RESIDENTIAL&nbsp;&nbsp;·&nbsp;&nbsp;
+              COMMERCIAL&nbsp;&nbsp;·&nbsp;&nbsp;
+              RETAIL&nbsp;&nbsp;·&nbsp;&nbsp;
+              LANDSCAPE
             </p>
-          </motion.div>
+ 
+            <a href="#approach">
+              SCROLL TO EXPLORE ↓
+            </a>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
-            {/* Architecture */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-accent-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-light mb-4">Architecture</h3>
-              <p className="text-neutral-600">
-                Innovative architectural solutions that blend functionality with aesthetic excellence.
-              </p>
-            </motion.div>
-
-            {/* Interior Design */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-accent-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-light mb-4">Interior Design</h3>
-              <p className="text-neutral-600">
-                Comprehensive interior design services creating functional,
-                aesthetically pleasing environments for homes and offices in Ahmedabad.
-              </p>
-            </motion.div>
-
-            {/* Landscape Design */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mx-auto mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 text-accent-600"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-serif font-light mb-4">Landscape Design</h3>
-              <p className="text-neutral-600">
-                Thoughtful outdoor design solutions that seamlessly blend natural elements with
-                architectural features.
-              </p>
-            </motion.div>
           </div>
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          APPROACH
+      ===================================================== */}
+
+      <section
+        id="approach"
+        className="approach-section"
+      >
+        <div className="section-label">
+          OUR APPROACH
+        </div>
+
+        <div className="approach-content">
+
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            We create considered
+            spaces that balance
+            material, light and function.
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+            }}
+          >
+            At Designview Architects, we believe that
+            meaningful design goes beyond aesthetics.
+            We shape spaces around the people who
+            inhabit them — bringing together clarity,
+            warmth and attention to detail.
+          </motion.p>
+
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 px-6 md:px-12 lg:px-24 bg-neutral-50">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-light mb-6">Featured Projects</h2>
-            <div className="w-24 h-px bg-accent-600 mx-auto mb-8" />
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              Explore our portfolio of meticulously crafted projects that showcase our commitment to
-              excellence.
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Project 1: Alexa */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              <Link href="/projects/8" className="block">
-                <div className="h-64 overflow-hidden relative">
-                  <Image
-                    src="/al-1.jpg"
-                    alt="Alexa"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    unoptimized
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-light mb-2">Alexa</h3>
-                  <p className="text-neutral-500 text-sm mb-3">Residential</p>
-                  <p className="text-neutral-600 text-sm">Gota, Ahmedabad</p>
-                </div>
-              </Link>
-            </motion.div>
+      {/* =====================================================
+          SELECTED WORK
+      ===================================================== */}
 
-            {/* Project 2: DELF Corporate Office */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              <Link href="/projects/10" className="block">
-                <div className="h-64 overflow-hidden relative">
-                  <Image
-                    src="/p_0005.jpg"
-                    alt="DELF Corporate Office"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    unoptimized
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-light mb-2">DELF Corporate Office</h3>
-                  <p className="text-neutral-500 text-sm mb-3">Commercial</p>
-                  <p className="text-neutral-600 text-sm">Panjrapole, Ahmedabad</p>
-                </div>
-              </Link>
-            </motion.div>
+      <section className="projects-section">
 
-            {/* Project 3: Gym @ Sun Evoq */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              whileHover={{ y: -5 }}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              <Link href="/projects/14" className="block">
-                <div className="h-64 overflow-hidden relative">
-                  <Image
-                    src="/g-1.jpg"
-                    alt="Gym @ Sun Evoq"
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    unoptimized
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-serif font-light mb-2">Gym @ Sun Evoq</h3>
-                  <p className="text-neutral-500 text-sm mb-3">Residential</p>
-                  <p className="text-neutral-600 text-sm">Sindhubhavan Road, Ahmedabad</p>
-                </div>
-              </Link>
-            </motion.div>
+        <div className="projects-header">
+
+          <div>
+            <h2>
+              Built with intention.
+            </h2>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center mt-12"
+          <Link
+            href="/projects"
+            className="view-all-link"
           >
-            <Link
-              href="/projects"
-              className="inline-block border border-accent-600 text-accent-600 px-8 py-3 font-sans text-sm uppercase tracking-wider hover:bg-accent-600 hover:text-white transition-all duration-300"
-            >
-              View All Projects
-            </Link>
-          </motion.div>
+            VIEW ALL PROJECTS →
+          </Link>
+
         </div>
+
+
+        <div className="projects-grid projects-grid-asymmetric">
+
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.id}
+              className={`project-item project-${index + 1}`}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.1,
+              }}
+            >
+
+              <Link
+                href={`/projects/${project.id}`}
+                className="project-link"
+              >
+
+                <div className="project-image">
+
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+
+
+                </div>
+
+                <div className="project-meta">
+
+                  <div>
+                    <p className="project-type">
+                      {project.type}
+                    </p>
+
+                    <h3>
+                      {project.name}
+                    </h3>
+                  </div>
+
+                  <p className="project-location">
+                    {project.location}
+                    <br />
+                    {project.year}
+                  </p>
+
+                </div>
+
+              </Link>
+
+            </motion.article>
+          ))}
+
+        </div>
+
       </section>
+
+
+      {/* =====================================================
+          SERVICES
+      ===================================================== */}
+
+      <section className="services-section">
+
+        <div className="section-label">
+          WHAT WE DO
+        </div>
+
+        <div className="services-intro">
+          <h2>
+            From the first sketch
+            <br />
+            to the final detail.
+          </h2>
+
+          <p>
+            Every project is approached as a complete
+            design experience — from architecture and
+            interiors to execution and the details that
+            make a space feel its own.
+          </p>
+        </div>
+
+
+        <div className="services-list">
+
+          <div className="service-row">
+            <span>01</span>
+            <h3>Architecture</h3>
+          </div>
+
+          <div className="service-row">
+            <span>02</span>
+            <h3>Interior Design</h3>
+          </div>
+
+          <div className="service-row">
+            <span>03</span>
+            <h3>Landscape Design</h3>
+          </div>
+
+          <div className="service-row">
+            <span>04</span>
+            <h3>Turnkey Projects</h3>
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* =====================================================
+          CONTACT CTA
+      ===================================================== */}
+
+      <section className="contact-cta">
+
+        <div>
+
+          <p className="section-label">
+            HAVE A PROJECT IN MIND?
+          </p>
+
+          <h2>
+            Let's bring your vision
+            <br />
+            to life.
+          </h2>
+
+        </div>
+
+        <Link
+          href="/contact"
+          className="cta-link"
+        >
+          START A PROJECT →
+        </Link>
+
+      </section>
+
     </div>
   );
 }
