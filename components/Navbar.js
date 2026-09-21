@@ -29,7 +29,7 @@ export default function Navbar() {
   return (
     <header
       className={`site-navbar ${
-        scrolled ? 'site-navbar-scrolled' : ''
+        scrolled ? 'site-navbar-scrolled' : 'site-navbar-top'
       }`}
     >
       <div className="navbar-inner">

@@ -14,6 +14,14 @@ const heroImages = [
 
 const projects = [
   {
+    id: 10,
+    name: 'DELF Corporate Office',
+    type: 'COMMERCIAL',
+    location: 'PANJRAPOLE, AHMEDABAD',
+    year: '2017',
+    image: '/d-7.png',
+  },
+  {
     id: 8,
     name: 'Alexa',
     type: 'RESIDENCE',
@@ -22,21 +30,13 @@ const projects = [
     image: '/al-1.jpg',
   },
   {
-    id: 10,
-    name: 'DELF Corporate Office',
-    type: 'COMMERCIAL',
-    location: 'PANJRAPOLE, AHMEDABAD',
-    year: '2017',
-    image: '/p_0005.jpg',
-  },
-  {
     id: 14,
     name: 'DEVIKA SILK PALACE',
     type: 'RETAIL',
     location: 'NARANPURA, AHMEDABAD',
     year: '2026',
     image: '/ss-4.png',
-  },
+  }
 ];
 
 export default function Home() {
